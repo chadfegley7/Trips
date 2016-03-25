@@ -1,0 +1,20 @@
+<html ng-app="blackBeltApp">
+  <head>
+    <title>MEAN Store</title>
+    <link rel='stylesheet' href='./static/style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
+    <script type="text/javascript" src="./js/config/routes.js"></script>
+    <script type="text/javascript" src="./js/controller/loginsController.js"></script>
+    <script type="text/javascript" src="./js/controller/dashboardsController.js"></script>
+    <script type="text/javascript" src="./js/controller/tripsController.js"></script>
+    <script type="text/javascript" src="./js/model/loginFactory.js"></script>
+    <script type="text/javascript" src="./js/model/tripFactory.js"></script>
+  </head>
+  <body>
+    <div>
+      <a href="#/">Login</a> | <a href="#/partial2/:id">Dashboard</a>
+      <div ng-view=''></div>
+    </div>
+  </body>
+</html>

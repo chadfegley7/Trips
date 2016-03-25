@@ -1,0 +1,21 @@
+<div ng-controller="dashboardsController">
+  <h1> Welcome {{ user.name }} </h1>
+  <form>
+    <input type="text" ng-model="newTrip.title" placeholder="Title" />
+    <input type="text" ng-model="newTrip.description" placeholder="Description" />
+    <select>
+      <option ng-repeat="trip in trips">{{ trip.name }}</option>
+    </select>
+    <input type="hidden" ng-value="newTrip.UserId = user._id" />
+    <input type="hidden" ng-value="newTrip.name = user.name" />
+    <input type="submit" ng-click="addTrip()" value="Submit" />
+  </form>
+  <h3>Before I die I want to:</h3>
+  <div ng-repeat="trip in trips">
+    <input type="checkbox" name="trip"/>{{ trip.title }} | {{ trip.description }}...{{ trip.created_at | date: 'MMMM dd, yyyy'}}
+  </div><hr />
+  <h3>Other Users planning trips:</h3>
+  <div ng-repeat="trip in trips">
+  <a href="#/partial3/{{trip.UserId}}">{{ trip.name }}</a>
+  </div>
+</div>

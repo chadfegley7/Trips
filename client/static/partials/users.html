@@ -1,0 +1,13 @@
+<div ng-controller="tripsController">
+  <h1> {{ trips.name }}'s Buscket List!</h1>
+
+  <h3>Done</h3>
+  <div ng-repeat="trip in trips">
+    <input type="checkbox" ng-click="markDone(trip)"name="trip"/>{{ trip.title }} | {{ trip.description }}...{{ trip.created_at | date: 'MMMM dd, yyyy'}}
+  </div><hr />
+
+  <h3>Pending</h3>
+  <div ng-repeat="trip in trips | filter:{isDone:true}">
+    <input type="checkbox" name="trip"/>{{ trip.title }} | {{ trip.description }}...{{ trip.created_at | date: 'MMMM dd, yyyy'}}
+  </div><hr />
+</div>
